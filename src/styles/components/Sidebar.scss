@@ -1,0 +1,155 @@
+@import "../Mixins";
+
+.sidebar {
+  $root: &;
+  @include flex(space-between, 20px, flex-start);
+  width: 125px;
+  height: 100%;
+  background-color: #EAEAEA;
+  flex-direction: column;
+  &[data-mobile="true"] {
+    position: absolute;
+    width: 60px;
+    overflow-x: hidden;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    transition: width .5s ease, box-shadow .5s ease;
+    will-change: width, box-shadow;
+    #{$root}__tabs {
+      padding-top: 10px;
+      padding-left: 0;
+    }
+    #{$root}__tab {
+      width: 100%;
+      min-width: max-content;
+      justify-content: flex-start;
+      gap: 18px;
+      flex-direction: row;
+      padding: 13px 18px;
+    }
+    #{$root}__actions {
+      width: 100%;
+      min-width: max-content;
+      align-items: flex-start;
+      &::before {
+        transition: width .5s ease, left .5s ease;
+        will-change: width, left;
+        width: 40px;
+        left: 10px;
+      }
+    }
+    #{$root}__signout {
+      @include flex(flex-start, 20px);
+      width: 100%;
+      padding: 13px 20px;
+    }
+    #{$root}__signout-icon {
+      width: 20px;
+      height: 20px;
+      margin: 0;
+    }
+    &[data-menu="true"] {
+      width: 180px;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+      #{$root}__actions {
+        &::before {
+          width: calc(100% - 40px);
+          left: 20px;
+        }
+      }
+    }
+  }
+  &__tabs {
+    display: block;
+    width: 100%;
+    min-width: 125px;
+    padding-top: 40px;
+    padding-left: 10px;
+  }
+  &__tab {
+    @include flex(center, 4px);
+    @include text(1.4rem, 700, 1.8rem);
+    width: 100%;
+    padding: 13px 20px;
+    color: var( --border-input-color);
+    flex-direction: column;
+    border-radius: 6px 0 0 6px;
+    &[data-active="true"] {
+      background-color: #F6F6F6;
+    }
+    &:active {
+      transform: translateY(0);
+    }
+  }
+  &__tab-icon {
+    display: block;
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+  }
+  &__actions {
+    @include flex(center, 40px);
+    position: relative;
+    width: calc(100% - 40px);
+    min-width: 85px;
+    margin: 0 auto;
+    padding: 35px 0;
+    flex-direction: column;
+    &::before {
+      position: absolute;
+      content: "";
+      width: 100%;
+      height: 1px;
+      background-color: #D1D1DD;
+      top: 0;
+      left: 0;
+      z-index: 0;
+    }
+  }
+  &__signout {
+    @include text(1.4rem, 700, 1.8rem, center);
+    display: block;
+    color: var( --border-input-color);
+    &:active {
+      transform: translateY(0);
+    }
+  }
+  &__signout-icon {
+    display: block;
+    width: 18px;
+    height: 18px;
+    margin: 0 auto 10px;
+    object-fit: contain;
+  }
+  &__menu {
+    display: block;
+    margin-top: 10px;
+    margin-left: 18px;
+    margin-bottom: 30px;
+    &:active {
+      transform: translateY(0);
+    }
+    &::before {
+      display: block;
+      content: "";
+      width: 14px;
+      height: 14px;
+      border-right: 4px solid #352E6C;
+      border-bottom: 4px solid #352E6C;
+      transform: rotateZ(-45deg);
+      border-radius: 4px;
+    }
+    &[data-menu="true"] {
+      &::before {
+        border-right: none;
+        border-bottom: none;
+        border-left: 4px solid #352E6C;
+        border-top: 4px solid #352E6C;
+        transform: translateX(5px) rotateZ(-45deg);
+      }
+    }
+  }
+}
+
+@import "./responsive/Sidebar";

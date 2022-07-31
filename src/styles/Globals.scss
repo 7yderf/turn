@@ -1,4 +1,5 @@
 @import "./Mixins";
+@import "./Custom.scss";
 
 /* General styles */
 * {
@@ -13,10 +14,15 @@
   // --secondary-color: ;
   // --accent-color: ;
   // --success-color: ;
-  // --error-color: ;
+  --background-color:#E5E5E5;
+  --error-color: #E15757;
   // --warning-color: ;
-  // --primary-font: ;
+  --primary-font: "Zen Kaku Gothic Antique", sans-serif;
   // --secondary-font: ;
+  --text-color: #464661;
+  --border-input-color: #03253E;
+  --text-color-white: #FFFFFF;
+  --background-table: #293046;
 }
 
 html {

@@ -1,5 +1,12 @@
 @import "../Mixins";
 
-.layout {}
+.layout {
+  @include flex(flex-start);
+  width: 100%;
+  height: calc(100vh - 67px);
+  &[data-auth="false"] {
+    height: 100vh;
+  }
+}
 
 @import "./responsive/Layout";

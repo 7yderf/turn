@@ -3,11 +3,34 @@
   @include for-size(desktop-big) {}
   @include for-size(desktop-mid) {}
   @include for-size(desktop) {}
-  @include for-size(tablet-landscape) {}
-  @include for-size(tablet-portrait) {}
-  @include for-size(tablet-small) {}
+  @include for-size(tablet-landscape) {
+    &__list {
+      gap: 20px;
+    }
+  }
+  @include for-size(tablet-portrait) {
+    &__logo {
+      min-width: 150px;
+    }
+  }
+  @include for-size(tablet-small) {
+    &__logo {
+      padding-left: 20px;
+    }
+    &__nav {
+      @include flex(flex-end);
+      padding-right: 20px;
+    }
+  }
   @include for-size(phone-xbig) {}
-  @include for-size(phone-big) {}
+  @include for-size(phone-big) {
+    &__logo {
+      padding-left: 16px;
+    }
+    &__nav {
+      padding-right: 16px;
+    }
+  }
   @include for-size(phone-mid) {}
   @include for-size(phone) {}
 }
