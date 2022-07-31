@@ -1,33 +1,34 @@
 import { lazy, Suspense } from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import { useAppContext } from "@context";
 
-import { Layout, LoaderPage } from "@components";
+import { Layout } from "@components";
 
-// import Home from "@pages/Home"; // Without lazy and Suspense
 const Home = lazy(() => import("@pages/Home"));
+// const Auth = lazy(() => import("@pages/Auth"));
 
 export default function App() {
-  const { global: { user, sessionId } } = useAppContext();
-
-  const authenticated = !(JSON.stringify(user) === JSON.stringify({}) && sessionId === null);
-
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Layout auth={authenticated} />}>
+        <Route path="/" element={<Layout />}>
           <Route
             index
             element={(
-              <Suspense fallback={<LoaderPage />}>
+              <Suspense>
                 <Home />
               </Suspense>
             )}
           />
-          {/* <Route index element={<Home />} /> */}
-          {/* Without lazy and Suspense 👆️ */}
+          {/* <Route
+            path="auth/:type"
+            element={(
+              <Suspense fallback={<LoaderPage />}>
+                <Auth />
+              </Suspense>
+            )}
+          /> */}
         </Route>
-        <Route path="*" element={<Navigate to="/" />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </BrowserRouter>
   );

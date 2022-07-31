@@ -1,0 +1,25 @@
+.sidebar {
+  $root: &;
+  @include for-size(phone-big) {
+    &[data-mobile="true"] {
+      width: 40px;
+      #{$root}__tab {
+        gap: 8px;
+        padding: 13px 18px 13px 8px;
+      }
+      #{$root}__actions {
+        &::before {
+          width: 30px;
+          left: 5px;
+        }
+      }
+      #{$root}__signout {
+        gap: 10px;
+        padding: 13px 20px 13px 10px;
+      }
+    }
+    &__menu {
+      margin-left: 8px;
+    }
+  }
+}

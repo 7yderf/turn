@@ -5,9 +5,22 @@
   @include for-size(desktop) {}
   @include for-size(tablet-landscape) {}
   @include for-size(tablet-portrait) {}
-  @include for-size(tablet-small) {}
+  @include for-size(tablet-small) {
+    position: relative;
+    height: calc(100vh - 62px);
+    padding-left: 60px;
+    &[data-auth="false"] {
+      height: 100vh;
+      padding-left: 0;
+    }
+  }
   @include for-size(phone-xbig) {}
-  @include for-size(phone-big) {}
+  @include for-size(phone-big) {
+    padding-left: 40px;
+    &[data-auth="false"] {
+      padding-left: 0;
+    }
+  }
   @include for-size(phone-mid) {}
   @include for-size(phone) {}
 }
