@@ -21,6 +21,11 @@ export default function reducer(state, action) {
         user: {},
         sessionId: null
       };
+    case "INFO_AVALUO":
+      return {
+        ...state,
+        avaluo: action.payload
+      };
     default:
       return state;
   }

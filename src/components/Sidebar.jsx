@@ -5,8 +5,7 @@ import { useMedia, useModal } from "@hooks";
 import "@stylesComponents/Sidebar.scss";
 
 import SignoutIcon from "@icons/signout-icon.svg";
-
-import { Language } from "@components";
+import Logo from "@icons/logoSolana.png";
 
 function Sidebar({ auth, tabs, tab, setTab }) {
   const { t } = useTranslation("header");
@@ -52,6 +51,9 @@ function Sidebar({ auth, tabs, tab, setTab }) {
             onClick={toggleMenu}
           />
         ) : null}
+        <div className="sidebar__logo" data-mobile={mobile}>
+          <img src={Logo} alt="" className="sidebar__logo-image" />
+        </div>
         {tabs.map((tabItem) => (
           <button
             key={tabItem.name}
@@ -66,7 +68,6 @@ function Sidebar({ auth, tabs, tab, setTab }) {
         ))}
       </div>
       <div className="sidebar__actions">
-        <Language menu={menu} />
         <button onClick={handleSignout} type="button" className="sidebar__signout">
           <img src={SignoutIcon} alt="" className="sidebar__signout-icon" />
           {t("signout")}

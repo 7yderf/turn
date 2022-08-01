@@ -1,10 +1,11 @@
 import { createPortal } from "react-dom";
-
 import "@stylesComponents/Loader.scss";
 
 export const Loader = ({ msg }) => (
   <div className="loader">
     {msg}
+    <div></div>
+    <div></div>
   </div>
 );
 

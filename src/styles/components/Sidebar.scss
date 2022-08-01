@@ -3,19 +3,22 @@
 .sidebar {
   $root: &;
   @include flex(space-between, 20px, flex-start);
-  width: 125px;
-  height: 100%;
-  background-color: #EAEAEA;
+  // width: 125px;
+  background-color: var(--background-second);
   flex-direction: column;
+  margin-top: -66px;
   &[data-mobile="true"] {
     position: absolute;
     width: 60px;
     overflow-x: hidden;
+    margin-top: initial;
+    height: 100%;
     top: 0;
     left: 0;
     z-index: 10;
     transition: width .5s ease, box-shadow .5s ease;
     will-change: width, box-shadow;
+    margin-top: initial;
     #{$root}__tabs {
       padding-top: 10px;
       padding-left: 0;
@@ -60,23 +63,35 @@
       }
     }
   }
+  &__logo {
+    @include flex(center);
+    min-width: 170px;
+    height: 65px;
+    background: #191F26;
+    &[data-mobile="true"]{
+      display: none;
+    }
+  }
+  &__logo-image {
+    display: block;
+    width: auto;
+    height: 30px;
+    object-fit: contain;
+  }
   &__tabs {
     display: block;
     width: 100%;
     min-width: 125px;
-    padding-top: 40px;
-    padding-left: 10px;
   }
   &__tab {
-    @include flex(center, 4px);
-    @include text(1.4rem, 700, 1.8rem);
+    @include flex(flex-start, 8px);
+    @include text(1.4rem, 200, 1.8rem);
     width: 100%;
     padding: 13px 20px;
-    color: var( --border-input-color);
-    flex-direction: column;
+    color: var(--text-color-white);
     border-radius: 6px 0 0 6px;
     &[data-active="true"] {
-      background-color: #F6F6F6;
+      background-color: #2B3137;
     }
     &:active {
       transform: translateY(0);
@@ -84,6 +99,7 @@
   }
   &__tab-icon {
     display: block;
+    filter: invert(1);
     width: 24px;
     height: 24px;
     object-fit: contain;
@@ -108,9 +124,9 @@
     }
   }
   &__signout {
-    @include text(1.4rem, 700, 1.8rem, center);
+    @include text(1.4rem, 300, 1.8rem, center);
     display: block;
-    color: var( --border-input-color);
+    color: var(--text-color-white);
     &:active {
       transform: translateY(0);
     }
@@ -121,6 +137,7 @@
     height: 18px;
     margin: 0 auto 10px;
     object-fit: contain;
+    filter: invert(1);
   }
   &__menu {
     display: block;
@@ -135,8 +152,8 @@
       content: "";
       width: 14px;
       height: 14px;
-      border-right: 4px solid #352E6C;
-      border-bottom: 4px solid #352E6C;
+      border-right: 4px solid #ffffff;
+      border-bottom: 4px solid #ffffff;
       transform: rotateZ(-45deg);
       border-radius: 4px;
     }
@@ -144,8 +161,8 @@
       &::before {
         border-right: none;
         border-bottom: none;
-        border-left: 4px solid #352E6C;
-        border-top: 4px solid #352E6C;
+        border-left: 4px solid #ffffff;
+        border-top: 4px solid #ffffff;
         transform: translateX(5px) rotateZ(-45deg);
       }
     }

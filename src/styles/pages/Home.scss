@@ -1,5 +1,13 @@
 @import "../Mixins";
 
-.home {}
+.home {
+  position: relative;
+  background: var(--background-color);
+  padding: 0;
+  margin: 0;
+  &__content {
+    width: 100%;
+  }
+}
 
 @import "./responsive/Home";
