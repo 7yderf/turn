@@ -10,7 +10,7 @@ export function AppProvider({ children }) {
   const initialState = {
     sessionId: storageSession || null,
     user: storageUser ? JSON.parse(storageUser) : {},
-    onboarding: null
+    avaluo: []
   };
 
   const [global, dispatch] = useReducer(reducer, initialState);

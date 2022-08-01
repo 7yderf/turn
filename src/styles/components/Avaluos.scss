@@ -1,0 +1,116 @@
+@import "../Mixins";
+
+.avaluos {
+ 
+  &__hero {
+    @include flex(flex-start);
+    background: #161b21;
+    height: 52px;
+    padding-left: 30px;
+  }
+  &__title {
+    @include text(1.4rem, 400, 1.6rem);
+    color: var(--text-color-white);
+    margin-bottom: 0;
+    padding-left: 30px;
+    &--sub {
+      font-weight: 300;
+      padding-left: 15px;
+      span {
+        font-weight: 100;
+      }
+    }
+  }
+  &__grid {
+    @include content(1220px, 0);
+    padding: 30px;
+    max-width: 1200px;
+  }
+  &__card {
+    @include flex(center);
+    @include text(1.8rem, 300, 2.3rem);
+    color: var(--text-color-white);
+    flex-direction: column;
+    background: var(--background-second);
+    border-radius: 5px;
+    padding: 40px 30px;
+    margin-bottom: 20px;
+    &--cardData{
+      padding: 10px 30px 20px;
+    }
+  }
+  &__image-card {
+    width: 130px;
+    height: 130px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 30px;
+  }
+  &__title-image {
+    @include text(2.4rem, 500, 3rem);
+    text-align: center;
+  }
+  &__mileage {
+    @include text(1.6rem, 300, 2.4rem);
+    text-align: center;
+  }
+  &__show-data {
+    @include text(1.8rem, 300, 2.3rem);
+    color: var(--text-color-white);
+    height: 60px;
+    border-bottom: 1px solid rgb(95, 95, 95);
+    margin-bottom: 20px;
+  }
+  &__info-user{
+    @include flex(flex-start, 0 8px, center);
+    flex-wrap: nowrap;
+    margin-bottom: 15px;
+  }
+  &__card-icon{
+    filter: invert(1)
+  }
+  &__card-key {
+    @include text(1.8rem, 300, 2.3rem);
+    margin-bottom: 5px;
+  }
+  &__card-text {
+    @include text(1.6rem, 100, 2.4rem);
+    margin-bottom: 15px;
+  }
+
+  &__card-bottom {
+    width: 100%;
+    @include flex(flex-start, false, stretch);
+    flex-direction: column;
+  }
+  &__description{
+    margin-bottom: 30px;
+  }
+  &__description-hero{
+    @include flex(space-between, false, center)
+  }
+  &__description-title{
+    @include text(1.6rem, 300, 2rem);
+    margin-bottom: 0;
+    color: #3699FF;
+  }
+  &__description-status{
+    @include text(1.6rem, 300, 2rem);
+    margin-bottom: 0;
+    color: var(--text-color-white);
+  }
+  &__description-status{
+    margin-left: auto;
+  }
+  &__btn-status{
+    font-size: 1.6rem!important;
+    font-weight: 300!important;
+    line-height: 2rem!important;
+    color: var(--text-color-white)!important;
+    margin-left: 20px;
+    width: 140px;
+    height: 50px;
+  }
+}
+
+@import "./responsive/Avaluos";

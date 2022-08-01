@@ -1,7 +1,7 @@
 import { lazy, Suspense } from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
-import { Layout } from "@components";
+import { Layout, LoaderPage } from "@components";
 
 const Home = lazy(() => import("@pages/Home"));
 // const Auth = lazy(() => import("@pages/Auth"));
@@ -14,7 +14,7 @@ export default function App() {
           <Route
             index
             element={(
-              <Suspense>
+              <Suspense fallback={<LoaderPage />}>
                 <Home />
               </Suspense>
             )}

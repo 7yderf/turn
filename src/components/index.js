@@ -14,3 +14,7 @@ export { Loader, LoaderPage } from "./Loaders";
 export { default as Modal } from "./Modal";
 export { default as ScrollLink } from "./ScrollLink";
 export { default as Sidebar } from "./Sidebar";
+export { default as Avaluos } from "./Avaluos";
+export { default as Card } from "./Card";
+export { default as CardData } from "./CardData";
+export { default as CardInfo } from "./CardInfo";
