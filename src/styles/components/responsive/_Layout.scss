@@ -7,7 +7,8 @@
   @include for-size(tablet-portrait) {}
   @include for-size(tablet-small) {
     position: relative;
-    height: calc(100vh - 46px);
+    min-height: calc(100vh - 46px);
+    height: 100%;
     padding-left: 60px;
     &[data-auth="false"] {
       height: 100vh;

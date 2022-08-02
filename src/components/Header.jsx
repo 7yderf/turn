@@ -1,21 +1,15 @@
 import { Link, NavLink } from "react-router-dom";
-import { useTranslation } from "react-i18next";
-import { useAppContext } from "@context";
 import { useMedia, useModal } from "@hooks";
 
 import Arrow from "@icons/arrow-down.svg";
 import Logo from "@icons/logoSolana.png";
+import profileImage from "@images/default-user-icon.svg";
 
 import "@stylesComponents/Header.scss";
 
-function Header({ auth }) {
-  const { t } = useTranslation("header");
-  const { global: { user } } = useAppContext();
+function Header() {
   const mobile = useMedia("(max-width: 635px)");
   const [menu, toggleMenu] = useModal("(max-width: 635px)");
-
-  // console.log({ auth });
-  // if (!auth) return null;
 
   return (
     <header className="header container-fluid">
@@ -44,7 +38,7 @@ function Header({ auth }) {
             >
               <div className="row ">
                 <div className="col-2 ">
-                  <img src={user.profileImage} alt="" className="header__profile" />
+                  <img src={profileImage} alt="" className="header__profile" />
                 </div>
                 <div className="col-6 header__content-text">
                   <p className="header__text">Horacio Montoya Villarreal</p>

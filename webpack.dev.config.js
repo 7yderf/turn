@@ -117,7 +117,7 @@ module.exports = {
       path: "./.env.development"
     }),
     new HtmlWebpackPlugin({
-      title: "¡Díselo a mi brillante trasero metálico!",
+      title: "Turn",
       favicon: "./public/favicon-dev.svg",
       meta: {
         "theme-color": "#FFFFFF"

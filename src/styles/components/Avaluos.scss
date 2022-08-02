@@ -65,17 +65,50 @@
     @include flex(flex-start, 0 8px, center);
     flex-wrap: nowrap;
     margin-bottom: 15px;
+    &--comment{
+      margin-bottom: 0;
+    }
   }
+  &__card-top{
+    @include flex(center);
+    flex-direction: column;
+  } 
   &__card-icon{
-    filter: invert(1)
+    filter: invert(1);
+    &--Download{
+      filter: invert(20%) sepia(74%) saturate(7070%) hue-rotate(215deg) brightness(104%) contrast(94%);
+    }
   }
   &__card-key {
     @include text(1.8rem, 300, 2.3rem);
     margin-bottom: 5px;
+    &--finalOffer{
+     color: #17BF63
+    }
   }
   &__card-text {
     @include text(1.6rem, 100, 2.4rem);
     margin-bottom: 15px;
+    &--negotiation{
+      margin-bottom: 0;
+    }
+    &--date{
+      font-size: 1.2rem;
+      font-weight: 1.5rem;
+      margin-bottom: 0;
+    }
+    &[data-required="Si"]{
+     &::after{
+       content: "*";
+       color: red;
+       font-size: 12px;
+       position: absolute;
+       text-align: center;
+       width: 12px;
+       height: 12px;
+
+     }
+    }
   }
 
   &__card-bottom {
@@ -110,6 +143,35 @@
     margin-left: 20px;
     width: 140px;
     height: 50px;
+  }
+  &__info-negotiation{
+    @include flex(space-between, false, flex-start);
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+    gap: 10px;
+    &--documents{
+      flex-direction: column;
+    }
+  }
+  &__checks-documents{
+    @include flex(center);
+    width: 100%;
+    border-bottom: 1px solid rgb(196, 196, 196);
+    padding: 10px 0;
+  }
+  
+  &__box-negotiation{
+    @include flex(flex-start, 0 8px, flex-start)
+  }
+
+  &__documents-types{
+    @include text(2.4rem, 400, 3rem, left);
+    width: 100%;
+    margin-bottom: 8;
+    margin-top: 20px;
+  }
+  .form-check-label{
+    margin-bottom: 0;
   }
 }
 

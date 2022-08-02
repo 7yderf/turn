@@ -4,12 +4,8 @@ import reducer from "./reducer";
 const AppContext = createContext(null);
 
 export function AppProvider({ children }) {
-  const storageSession = localStorage.getItem("sessionId");
-  const storageUser = localStorage.getItem("user");
 
   const initialState = {
-    sessionId: storageSession || null,
-    user: storageUser ? JSON.parse(storageUser) : {},
     avaluo: []
   };
 

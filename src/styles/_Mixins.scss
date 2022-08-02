@@ -35,6 +35,10 @@
     @media screen and (max-width: 1200px) {
       @content;
     }
+  } @else if $size == desktop-middle {
+    @media screen and (max-width: 1320px) {
+      @content;
+    }
   } @else if $size == desktop-big {
     @media screen and (max-width: 1440px) {
       @content;

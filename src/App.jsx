@@ -4,7 +4,6 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { Layout, LoaderPage } from "@components";
 
 const Home = lazy(() => import("@pages/Home"));
-// const Auth = lazy(() => import("@pages/Auth"));
 
 export default function App() {
   return (
@@ -19,14 +18,6 @@ export default function App() {
               </Suspense>
             )}
           />
-          {/* <Route
-            path="auth/:type"
-            element={(
-              <Suspense fallback={<LoaderPage />}>
-                <Auth />
-              </Suspense>
-            )}
-          /> */}
         </Route>
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
