@@ -128,7 +128,7 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       title: "Template Webpack React",
-      favicon: "./public/favicon.svg",
+      favicon: "./public/favicon.png",
       meta: {
         "theme-color": "#FFFFFF"
       },

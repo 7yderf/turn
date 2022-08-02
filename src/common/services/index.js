@@ -1,8 +1,4 @@
-export {
-  signin,
-  signup,
-  forgot
-} from "./auth";
+/* eslint-disable import/prefer-default-export */
 export {
   infoAvaluo
 } from "./avaluo";

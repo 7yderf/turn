@@ -2,7 +2,6 @@ import ImgCart from "@images/vehicle.jpg";
 import "@stylesComponents/Avaluos.scss";
 
 export default function Card({ vehicle }) {
-  console.log({ vehicle });
   return (
     <div className="avaluos__card">
       <div className="avaluos__card-top">

@@ -1,19 +1,14 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import { useTranslation } from "react-i18next";
 import { useMedia, useModal } from "@hooks";
 import "@stylesComponents/Sidebar.scss";
 
-import SignoutIcon from "@icons/signout-icon.svg";
 import Logo from "@icons/logoSolana.png";
 
-function Sidebar({ auth, tabs, tab, setTab }) {
-  const { t } = useTranslation("header");
+function Sidebar({ tabs, tab, setTab }) {
   const { pathname } = useLocation();
   const mobile = useMedia("(max-width: 635px)");
   const [menu, toggleMenu] = useModal("(max-width: 635px)");
-  const handleSignout = () => {
-  };
 
   const handleTab = (tabToSet) => {
     setTab(tabToSet);
@@ -37,8 +32,6 @@ function Sidebar({ auth, tabs, tab, setTab }) {
       }
     }
   }, [tabs, setTab, pathname]);
-
-  // if (!auth) return null;
 
   return (
     <aside className="sidebar" data-mobile={mobile} data-menu={menu}>
@@ -68,10 +61,6 @@ function Sidebar({ auth, tabs, tab, setTab }) {
         ))}
       </div>
       <div className="sidebar__actions">
-        <button onClick={handleSignout} type="button" className="sidebar__signout">
-          <img src={SignoutIcon} alt="" className="sidebar__signout-icon" />
-          {t("signout")}
-        </button>
       </div>
     </aside>
   );

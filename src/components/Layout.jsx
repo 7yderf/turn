@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { Outlet, useLocation } from "react-router-dom";
-// import { withAuth } from "@hoc";
 
 import "@stylesComponents/Layout.scss";
 
@@ -30,5 +29,4 @@ function Layout({ auth }) {
   );
 }
 
-// export default withAuth(Layout, "component");
 export default Layout;
